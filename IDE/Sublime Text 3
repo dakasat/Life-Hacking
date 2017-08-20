@@ -1,0 +1,81 @@
+# Устанавлемые расширения
+1.  Package Control			// Устанавливается автоматически при инициализации
+2.	Emmet
+3.	SublimeCodeIntel		// Автокомплит для разных языков программирования и HTML
+4.	HTML-CSS-JS Prettify	// Для выравнивания кода, Ctrl + Shift + H
+5.	AutoFileName			// Выдает подсказки пути при подключении файлов
+6.	CSScomb					// Сортировка кода CSS, Ctrl + Shift + C
+7. 	jQuery					// Автокомплит кода
+8.	All Autocomplete		// Предлагает наиболее релевантные варианты продолжения слова
+9.	SideBarEnhancements		// Расширяет возможности сайдбара
+10.	JavaScript Completions	// Автокомплит кода на JavaScript
+11.	WordPress				// Автокомплит кода WordPress
+12.	LESS					// Подсветка синтаксиса less
+13.	SCSS					// Подсветка синтаксиса scss
+14.	SublimeLinter
+15.	SublimeLinter-html-tidy
+16.	SublimeLinter-csslint
+17.	SublimeLinter-jsl
+18.	SublimeLinter-jshint
+19.	SublimeLinter-php
+20.	SublimeLinter-phplint
+21.	BracketHighlighter
+21.	----- JSHint
+
+# Дополнительные настройки после установки пакетов:
+# https://habrahabr.ru/post/262137/
+
+1. Скачиваем tidy.exe и кладем его system32
+	http://www.paehl.com/open_source/?HTML_Tidy_for_Windows
+2. Скачиваем и устанавливаем node.js
+	https://nodejs.org/uk/
+3. Добавляем путь в path
+	Win10 --> Win + PAUSE --> Дополнительные параметры о системе
+	C:\Users\Insigo\AppData\Roaming\npm
+3. Устанавливаем пакеты:
+	npm install -g csslint
+	npm install -g jslint
+	npm install -g jshint
+
+# --------------------
+
+# Дополнительные пакеты
+	JavaScript & NodeJS Snippets	// Снипеты для JS
+	css extended conpletions		// Миксины
+	bootstrap 3 snippets			// Типпа emmet для бутстрапа
+	DocBlockr						// Помогает в написании комментов
+	Console wraprap for JS			// Помогает допысывать вывод на консоль
+	Can I Use						// Проверка совместимости с браузерами
+	css3							// Подсветка кода css (нужно отключить плагин css)
+
+# Темы
+	Material Theme
+	# Активация темы
+	Command Palette -->  Material Theme: Activate theme
+	# Цветовая схема
+	Command Palette --> Material Theme: Configuration --> Color Theme --> Material Theme
+
+# --------------------
+
+# Автосохранение в Sublime Text 3
+{
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"save_on_focus_lost": true	// Добавляем автосохранение при смене фокуса
+}
+
+# --------------------
+
+# Выравнивание отступов используя Indentation: Reindent lines
+	# Добавляем хоткей
+	# Preferences --> Key Bindings
+	[
+	  // Выравнивание кода
+	  {"keys": ["ctrl+shift+r"], "command": "reindent", "args": {"single_line": false} },
+
+	  // Преабразуем пробелы в табы
+	  { "keys": ["ctrl+shift+x"], "command": "unexpand_tabs", "args": { "set_translate_tabs": false } },
+	]
