@@ -1,0 +1,174 @@
+
+// Импорт css в less
+
+@import (less) "style.css";
+
+// ___________________________________
+
+// Некомпилируемые строки
+
+width: ~"calc(100%-10px)";
+
+// ___________________________________
+
+// Вложенность
+
+.header{
+	background-color: #eeeeee;
+	&__container{
+		padding: 10px;
+	}
+// Обратная вложенность	
+	.wrapper &{
+		color:#fff;
+	}
+}
+// Компиляция в css:
+.header{
+	background-color: #eeeeee;
+}
+.header__container{
+	padding: 10px;
+}
+.wrapper .header{
+	color:#fff;
+}
+
+// _____________________________________
+
+// Переменные
+
+@main-color: #eeeeee;
+
+color: @main-color;
+// _____________________________________
+
+// Миксины
+
+// Некомпиллируемый миксин в класс в css
+.main-font(){
+	font-size: 18px;
+	font-weight: bold;
+	color:#e6e6e6;
+// Добавит всем классам использ. миксин псевдоэлемент hover
+	&:hover{
+		color:green;
+	}
+}
+
+// Использование миксина в селекторе
+.section__text{
+	.main-font;
+	background-color: #fff;
+}
+
+// Миксин как объект
+
+.btn-mixin(){
+	.hover{
+		background-color: grey;
+	}
+	.tt{
+		text-transform: uppercase;
+	}
+}
+
+// Использование поля (части) миксина
+.btn{
+	.btn-mixin >.tt;
+	font-size: 20px;
+}
+// Миксины как функции
+// Кол-во переданных параметров, должно соотв. заданным
+
+.mixin(@radius, @padding){
+	border-radius: @radius;
+	padding: @padding;
+}
+
+.btn{
+	.mixin(10px, 20px);
+}
+
+// Компиляция в css:
+
+.btn{
+	border-radius: 10px;
+	padding: 20px;
+}
+
+// Использование параметра по умолчанию:
+.mixin(@radius, @padding: 15px){
+	border-radius: @radius;
+	padding: @padding;
+}
+
+// Компиляция в css:
+
+.btn{
+	border-radius: 10px;
+	padding: 15px;
+}
+
+// Если необходимо использовать не все параметры миксина, то
+.mixin(@radius, @padding, @color){
+	border-radius: @radius;
+	padding: @padding;
+	color: @color;
+}
+
+.mixin(@radius, @padding){
+	border-radius: @radius;
+	padding: @padding;
+	
+}
+.mixin(@radius){
+	border-radius: @radius;
+}
+// От кол-ва переданных параметров вызовется нужный миксин
+.btn{
+	.mixin(10px, 20px, grey);
+}
+.btn{
+	.mixin(10px, 20px);
+}
+.btn{
+	.mixin(10px);
+}
+
+// Аргумент
+.mixin(@width:1px, @type:solid, @color: #000){
+	border: @arguments;
+}
+
+.box{
+	.mixin;
+}
+
+.box{
+	.mixin(@width: 2px);
+}
+
+// _____________________________________
+// _____________________________________
+
+// Наследование
+
+.btn{
+	background-color: red;
+	border: 1px solid #000;
+}
+
+.btn_section{
+	&:extend(.btn);
+	color:#fff;
+}
+
+// В css будет так:
+
+.btn, 
+.btn_section{
+	color:#fff;
+}
+
+// _____________________________________
