@@ -1,0 +1,10 @@
+# Настройка и оптимизация WebStorm
+
+## Настройка WebStorm
+          Editor/File Encoding/Project Encoding --> UTF8
+          Editor/Code Style/Line separator(for new file) --> Unix and OS X(\n)
+          
+## Редактируем: Program Files\JetBrains\WebStorm 2017.2\bin\webstorm64.exe.vmoptions
+          -Xms4000m
+          -Xmx4000m
+          -XX:ReservedCodeCacheSize=1000m
