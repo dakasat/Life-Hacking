@@ -1,0 +1,20 @@
+# Удаляем
+$ npm rm gulp -g
+$ npm rm gulp-cli -g
+$ cd [your-project-dir/]
+$ npm rm gulp --save-dev
+$ npm rm gulp --save
+$ npm rm gulp --save-optional
+$ npm cache clean
+
+# Устанавливаем latest Gulp CLI tools глобально
+$ npm install gulpjs/gulp-cli -g
+
+# Устанавливаем Gulp 4 в проект
+$ npm install gulpjs/gulp#4.0 --save-dev
+
+# Проверяем версию
+$ gulp -v
+---
+[22:48:24] CLI version 1.4.0
+[22:48:24] Local version 4.0.0-alpha.2
