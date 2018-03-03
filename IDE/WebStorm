@@ -8,3 +8,6 @@
           -Xms4000m
           -Xmx4000m
           -XX:ReservedCodeCacheSize=1000m
+          
+## Перестало работать автодополнение для JavaScript, очищаем кеш
+          file / Invalidate Caches
