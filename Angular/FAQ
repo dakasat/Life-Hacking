@@ -1,0 +1,8 @@
+# tslint.json
+  Двойные кавычки ->
+        "quotemark": [
+        true,
+        "double"
+        ]
+
+  
