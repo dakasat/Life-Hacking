@@ -5,4 +5,9 @@
         "double"
         ]
 
-  
+  Авт. испр. для lint в angular-cli.json
+        "defaults": {
+          "lintFix": true, // <---
+          "styleExt": "css",
+          "component": {}
+        }
