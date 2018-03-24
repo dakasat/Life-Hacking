@@ -11,3 +11,5 @@
           "styleExt": "css",
           "component": {}
         }
+        
+  Запускаем исправление ng lint --fix
